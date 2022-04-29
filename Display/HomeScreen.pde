@@ -41,6 +41,12 @@ void draw() {
   rect(ptX[11], ptY[11], rectWidth, rectHeight);
   //
   fill(black);
+  rect();
+  rect();
+  rect();
+  fill(resetWhite); //Best Practice
+  //
+  fill(black);
   //Starting pts for rect() must be 1-9 & filled black
   ellipse(ptX[1], ptY[1], ptDiameter, ptDiameter);
   ellipse(ptX[2], ptY[2], ptDiameter, ptDiameter);
