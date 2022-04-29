@@ -5,6 +5,11 @@ float rectWidth, rectHeight, ptDiameter;
 int numberOfPoints = 17;
 float[] ptX = new float[numberOfPoints];
 float[] ptY = new float[numberOfPoints];
+int numberofButtons = 4; //will be 9
+float[] buttonX = new float[numberofButtons];
+float[] buttonY = new float[numberofButtons];
+float[] buttonWidth = new float[numberofButtons];
+float[] buttonHeight = new float[numberofButtons];
 //
 void setup()
 {
@@ -26,6 +31,26 @@ void setup()
   ptY[9] = ptY[10] = ptY[11] = ptY[12] = appHeight*2/3;
   ptY[13] = ptY[14] = ptY[15] = ptY[16] = appHeight*3/3;
   //
+  buttonX[1] = appWidth*(1.0/3.0)*(1.0/3.0); //Section 1; subsection 2, numerator is 1
+  buttonY[1] = appHeight*(1.0/3.0)*(1.0/3.0); //Section 1; subsection 2, numerator is 1
+  buttonWidth[1] = appWidth*(1.0/3.0)*(1.0/3.0); //Width Denominator count = 9 ... 1/9
+  buttonHeight[1] = appHeight*(1.0/3.0)*(1.0/3.0); //Height Denominator count = 9 ... 1/9
+  //
+  buttonX[2] = appWidth*(3.0/6.0); //Section 2, subsection 2, numerator is 3
+  buttonY[2] = appHeight*(2.0/6.0); //Section 2, subsection 1, numerator is 2
+  buttonWidth[2] = appWidth*(1.0/3.0)*(1.0/2.0); //Denominator of 6
+  buttonHeight[2] = appHeight*(1.0/3.0)*(1.0/2.0); //Denominator of 6
+  //
+  buttonX[3] = appWidth*(11.0/15.0); //Section 3, subsection 2, Numerator is 11
+  buttonY[3] = appHeight*(13.0/15.0); //Section 3, subsection 4, Numerator is 14
+  buttonWidth[3] = appWidth*(1.0/3.0)*(1.0/5.0); //Denominator is 15
+  buttonHeight[3] = appHeight*(1.0/3.0)*(1.0/5.0); //Denominator is 15
+  //
+  printArray(buttonX);
+  printArray(buttonY);
+  printArray(buttonWidth);
+  printArray(buttonHeight);
+  //
 }//End setup
 //
 void draw() {
@@ -41,9 +66,9 @@ void draw() {
   rect(ptX[11], ptY[11], rectWidth, rectHeight);
   //
   fill(black);
-  rect();
-  rect();
-  rect();
+  rect(buttonX[1], buttonY[1], buttonWidth[1], buttonHeight[1]);
+  rect(buttonX[2], buttonY[2], buttonWidth[2], buttonHeight[2]);
+  rect(buttonX[3], buttonY[3], buttonWidth[3], buttonHeight[3]);
   fill(resetWhite); //Best Practice
   //
   fill(black);
