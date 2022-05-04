@@ -5,11 +5,12 @@ float rectWidth, rectHeight, ptDiameter;
 int numberOfPoints = 17;
 float[] ptX = new float[numberOfPoints];
 float[] ptY = new float[numberOfPoints];
-int numberofButtons = 4; //will be 9
-float[] buttonX = new float[numberofButtons];
-float[] buttonY = new float[numberofButtons];
-float[] buttonWidth = new float[numberofButtons];
-float[] buttonHeight = new float[numberofButtons];
+int numberOfButtons = 4; //will be 11: quit, reset, and 9 more buttons, 1 per section (3x3)
+float[] buttonX = new float[numberOfButtons];
+float[] buttonY = new float[numberOfButtons];
+float[] buttonWidth = new float[numberOfButtons];
+float[] buttonHeight = new float[numberOfButtons];
+
 //
 void setup()
 {
@@ -31,26 +32,26 @@ void setup()
   ptY[9] = ptY[10] = ptY[11] = ptY[12] = appHeight*2/3;
   ptY[13] = ptY[14] = ptY[15] = ptY[16] = appHeight*3/3;
   //
-  buttonX[1] = appWidth*(1.0/3.0)*(1.0/3.0); //Section 1; subsection 2, numerator is 1
-  buttonY[1] = appHeight*(1.0/3.0)*(1.0/3.0); //Section 1; subsection 2, numerator is 1
-  buttonWidth[1] = appWidth*(1.0/3.0)*(1.0/3.0); //Width Denominator count = 9 ... 1/9
-  buttonHeight[1] = appHeight*(1.0/3.0)*(1.0/3.0); //Height Denominator count = 9 ... 1/9
+  buttonX[1] = appWidth*(1/9); //Section 1, subsection 1: numerator (count is 1)
+  buttonY[1] = appHeight*(1/9); //Section 1, subsection 1: numerator (count is 1)
+  buttonWidth[1] = appWidth*(1/3)*(1/3); //Section 1, subsection 1: denominator (count = 9, 1/9)
+  buttonHeight[1] = appHeight*(1/3)*(1/3); //Section 1, subsection 1: denominator (count = 9, 1/9): 
   //
-  buttonX[2] = appWidth*(3.0/6.0); //Section 2, subsection 2, numerator is 3
-  buttonY[2] = appHeight*(2.0/6.0); //Section 2, subsection 1, numerator is 2
-  buttonWidth[2] = appWidth*(1.0/3.0)*(1.0/2.0); //Denominator of 6
-  buttonHeight[2] = appHeight*(1.0/3.0)*(1.0/2.0); //Denominator of 6
+  buttonX[2] = appWidth*(2/6); //Section 2: numerator is 2 (count is 2)
+  buttonY[2] = appHeight*(2/6); //Section 2: numerator is 2 (count is 2)
+  buttonWidth[2] = appWidth*(1/3)*(1/2); //Section 2, subsection 2: denominator (count = 6, 1/6)
+  buttonHeight[2] = appHeight*(1/3)*(1/2) ; //Section 2, subsection 2: denominator (count=6, 1/6)
   //
-  buttonX[3] = appWidth*(11.0/15.0); //Section 3, subsection 2, Numerator is 11
-  buttonY[3] = appHeight*(13.0/15.0); //Section 3, subsection 4, Numerator is 14
-  buttonWidth[3] = appWidth*(1.0/3.0)*(1.0/5.0); //Denominator is 15
-  buttonHeight[3] = appHeight*(1.0/3.0)*(1.0/5.0); //Denominator is 15
+  buttonX[3] = appWidth* ; //Section 3: numerator is ??? (count is ???)
+  buttonY[3] = appHeight* ; //Section 3: numerator is ??? (count is ???)
+  buttonWidth[3] = appWidth* ; //Section 3, subsection 3: denominator (count = ???, 1/???)
+  buttonHeight[3] = appHeight* ; //Section 3, subsection 3: denominator (count = ???, 1/???)
   //
-  printArray(buttonX);
-  printArray(buttonY);
-  printArray(buttonWidth);
-  printArray(buttonHeight);
-  //
+  //Verifying Array Read-in
+  print("\nX-values are: ");
+  printArray(ptX);
+  println("\nY-values are: ");
+  printArray(ptY);
 }//End setup
 //
 void draw() {
@@ -66,9 +67,9 @@ void draw() {
   rect(ptX[11], ptY[11], rectWidth, rectHeight);
   //
   fill(black);
-  rect(buttonX[1], buttonY[1], buttonWidth[1], buttonHeight[1]);
-  rect(buttonX[2], buttonY[2], buttonWidth[2], buttonHeight[2]);
-  rect(buttonX[3], buttonY[3], buttonWidth[3], buttonHeight[3]);
+  rect( buttonX[1], buttonY[1], buttonWidth[1], buttonHeight[1] );
+  rect( buttonX[2], buttonY[2], buttonWidth[2], buttonHeight[2] );
+  rect( buttonX[3], buttonY[3], buttonWidth[3], buttonHeight[3] );
   fill(resetWhite); //Best Practice
   //
   fill(black);
